@@ -1,8 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe TryAnglesController, type: :controller do
+RSpec.describe "isTriangle" do
   context 'Equilateral' do
     it "should return Equilateral when all three sides are equal" do
+
       expect(isTriangle(3,3,3)).to eq("Equilateral")
     end
   end

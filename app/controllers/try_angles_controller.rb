@@ -1,13 +1,11 @@
-class TryAnglesController < ApplicationController
+
   def isTriangle(a, b, c)
   if a == b && a==c
-    puts "Equalateral"
+    "Equalateral"
   elsif
     a == b && a != c or b == c or a == c
-    puts "Isosceles"
+    "Isosceles"
   else
-    puts "Scalene"
+    "Scalene"
   end
-end
-
 end
