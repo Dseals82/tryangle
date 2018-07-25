@@ -1,18 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe TryAnglesController, type: :controller do
-  context 'Checks Triangle Type' do
-    it 'validates three out of three sides are equal' do
-      Tryangle = isTriangle(3,3,3)
-      expect(Tryangle).to be(true)
+  context 'Equilateral' do
+    it "should return Equilateral when all three sides are equal" do
+      expect(isTriangle(3,3,3)).to eq("Equilateral")
     end
-    it 'validates two out of three sides are equal' do
-      Tryangle = isTriangle(1,3,3)
-      expect(Tryangle).to be(true)
+  end
+
+  context 'Isosceles' do
+    it "should return Isosceles when two out of three sides are equal" do
+      expect(isTriangle(1,2,2)).to eq("Isosceles")
     end
-    it 'validates no sides are equal' do
-      Tryangle = isTriangle(1,2,3)
-      expect(Tryangle).to be(true)
-    end
+  end
+    context 'Scalene' do
+      it "should return Scalene when no sides are equal to eachother" do
+        expect(isTriangle(1,2,3)).to eq("Scalene")
+      end
   end
 end
