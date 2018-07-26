@@ -1,4 +1,4 @@
-require 'rails_helper'
+require_relative '../lib/tryangle'
 
 RSpec.describe "isTriangle" do
   context 'Equilateral' do
