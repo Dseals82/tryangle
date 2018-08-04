@@ -39,7 +39,7 @@ RSpec.describe "isTriangle" do
 
     context 'isNotTriangle' do
       it "raises" do
-    expect { ArgumentError.new }.to raise_error(isNotTriangle(100,50,50))
+    expect { ArgumentError.new(isNotTriangle(100,50,50)) }.to raise_error(ArgumentError)
   end
     end
   end
