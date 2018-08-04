@@ -38,8 +38,14 @@ RSpec.describe "isTriangle" do
     end
 
     context 'isNotTriangle' do
-      it "raises" do
-    expect { ArgumentError.new(isNotTriangle(100,50,50)) }.to raise_error(ArgumentError)
+      it "raises error if one side exceeds the size of the other two sides" do
+    expect { ArgumentError.new(isNotTriangle(1,1,10)) }.to raise_error("Triangle Cannot Exist")
+  end
+      it "raises error if one side exceeds the size of the other two sides" do
+    expect { ArgumentError.new(isNotTriangle(1,10,1)) }.to raise_error("Triangle Cannot Exist")
+    end
+      it "raises error if one side exceeds the size of the other two sides" do
+    expect { ArgumentError.new(isNotTriangle(10,1,1)) }.to raise_error("Triangle Cannot Exist")
   end
     end
   end
