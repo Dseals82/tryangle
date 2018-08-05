@@ -1,17 +1,16 @@
 
 def isTriangle(a,b,c)
   if isEquilateral(a,b,c)
-    "Equilateral"
-  elsif isIsosceles(a,b,c)
-    "Isosceles"
-  elsif isScalene(a,b,c)
-    "Scalene"
-  else isNotTriangle(a,b,c)
+      "Equilateral"
+    elsif isIsosceles(a,b,c)
+      "Isosceles"
+    elsif isScalene(a,b,c)
+      "Scalene"
+    else isNotTriangle(a,b,c)
   end
 end
-# I wish I could put this lower half of code in a partial... note to self: check for solution
+
 def isNotTriangle(a,b,c)
-  # if a > b && c or b > a && c or c > a && b
   if (a + b) < c or (b + c) < a or (a + c) < b
     raise ArgumentError.new("Triangle Cannot Exist")
   end
@@ -26,5 +25,5 @@ def isIsosceles(a,b,c)
 end
 
 def isScalene(a,b,c)
-  (a != b && a != c) or (b != a && b != c) or (c != a && c != b)
+  (a != b && a != c) and (b != a && b != c) and (c != a && c != b)
 end

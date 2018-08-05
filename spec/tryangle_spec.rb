@@ -48,10 +48,13 @@ RSpec.describe "isTriangle" do
         expect(isTriangle(2,1,3)).to eq("Scalene")
       end
       it "should return True" do
-        expect(isScalene(2,2,7)).to eq(true)
+        expect(isScalene(1,2,3)).to eq(true)
       end
       it "should return False" do
         expect(isScalene(3,3,3)).to eq(false)
+      end
+      it "should return False" do
+        expect(isScalene(1,1,2)).to eq(false)
       end
     end
 
