@@ -12,7 +12,7 @@ end
 # I wish I could put this lower half of code in a partial... note to self: check for solution
 def isNotTriangle(a,b,c)
   if a > b && c or b > a && c or c > a && b
-    raise ArgumentError.new("Triangle Cannot Exist") 
+    raise ArgumentError.new("Triangle Cannot Exist")
   end
 end
 
@@ -25,5 +25,5 @@ def isIsosceles(a,b,c)
 end
 
 def isScalene(a,b,c)
-  a != b && c or b != a && c or c != a && b
+  (a != b && c) or (b != a && c) or (c != a && b)
 end
