@@ -48,7 +48,7 @@ RSpec.describe "isTriangle" do
         expect(isTriangle(2,1,3)).to eq("Scalene")
       end
       it "should return True" do
-        expect(isScalene(1,2,3)).to eq(true)
+        expect(isScalene(2,2,7)).to eq(true)
       end
       it "should return False" do
         expect(isScalene(3,3,3)).to eq(false)
@@ -56,13 +56,13 @@ RSpec.describe "isTriangle" do
     end
 
     context 'isNotTriangle' do
-      it "raises error if one side exceeds the size of the other two sides" do
+      it "raises error if one side exceeds the sum of the other two sides" do
     expect { ArgumentError.new(isNotTriangle(1,1,10)) }.to raise_error("Triangle Cannot Exist")
   end
-      it "raises error if one side exceeds the size of the other two sides" do
+      it "raises error if one side exceeds the sum of the other two sides" do
     expect { ArgumentError.new(isNotTriangle(1,10,1)) }.to raise_error("Triangle Cannot Exist")
     end
-      it "raises error if one side exceeds the size of the other two sides" do
+      it "raises error if one side exceeds the sum of the other two sides" do
     expect { ArgumentError.new(isNotTriangle(10,1,1)) }.to raise_error("Triangle Cannot Exist")
   end
     end
