@@ -12,6 +12,9 @@ RSpec.describe "isTriangle" do
     it "should return Equilateral when all three sides are equal" do
       expect(isTriangle(3,3,3)).to eq("Equilateral")
     end
+  end
+
+  describe "isEquilateral" do
     it "should return True" do
       expect(isEquilateral(3,3,3)).to eq(true)
     end
@@ -30,6 +33,9 @@ RSpec.describe "isTriangle" do
     it "should return Isosceles when two out of three sides are equal" do
       expect(isTriangle(2,1,2)).to eq("Isosceles")
     end
+  end
+
+  describe "isIsosceles" do
     it "should return True" do
       expect(isIsosceles(2,1,2)).to eq(true)
     end
@@ -37,6 +43,7 @@ RSpec.describe "isTriangle" do
       expect(isIsosceles(3,1,2)).to eq(false)
     end
   end
+
     context 'Scalene' do
       it "should return Scalene when no sides are equal to eachother" do
         expect(isTriangle(1,2,3)).to eq("Scalene")
@@ -47,6 +54,9 @@ RSpec.describe "isTriangle" do
       it "should return Scalene when no sides are equal to eachother" do
         expect(isTriangle(2,1,3)).to eq("Scalene")
       end
+    end
+
+    describe "isScalene" do
       it "should return True" do
         expect(isScalene(1,2,3)).to eq(true)
       end
@@ -58,15 +68,17 @@ RSpec.describe "isTriangle" do
       end
     end
 
-    context 'isNotTriangle' do
-      it "raises error if one side exceeds the sum of the other two sides" do
-    expect { ArgumentError.new(isNotTriangle(1,1,10)) }.to raise_error("Triangle Cannot Exist")
-  end
-      it "raises error if one side exceeds the sum of the other two sides" do
-    expect { ArgumentError.new(isNotTriangle(1,10,1)) }.to raise_error("Triangle Cannot Exist")
+    describe "isNotTriangle" do
+      context 'Triangle Cannot Exist' do
+        it "raises error if one side exceeds the sum of the other two sides" do
+      expect { ArgumentError.new(isNotTriangle(1,1,10)) }.to raise_error("Triangle Cannot Exist")
     end
-      it "raises error if one side exceeds the sum of the other two sides" do
-    expect { ArgumentError.new(isNotTriangle(10,1,1)) }.to raise_error("Triangle Cannot Exist")
-  end
+        it "raises error if one side exceeds the sum of the other two sides" do
+      expect { ArgumentError.new(isNotTriangle(1,10,1)) }.to raise_error("Triangle Cannot Exist")
+      end
+        it "raises error if one side exceeds the sum of the other two sides" do
+      expect { ArgumentError.new(isNotTriangle(10,1,1)) }.to raise_error("Triangle Cannot Exist")
+    end
+      end
     end
   end
