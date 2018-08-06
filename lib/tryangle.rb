@@ -1,3 +1,8 @@
+def isNotTriangle(a,b,c)
+  if (a + b) < c or (b + c) < a or (a + c) < b
+    raise ArgumentError.new("Triangle Cannot Exist")
+  end
+end
 
 def isTriangle(a,b,c)
   if isEquilateral(a,b,c)
@@ -7,12 +12,6 @@ def isTriangle(a,b,c)
   elsif isScalene(a,b,c)
     "Scalene"
   else isNotTriangle(a,b,c)
-  end
-end
-
-def isNotTriangle(a,b,c)
-  if (a + b) < c or (b + c) < a or (a + c) < b
-    raise ArgumentError.new("Triangle Cannot Exist")
   end
 end
 
