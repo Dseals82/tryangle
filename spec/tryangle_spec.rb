@@ -70,13 +70,13 @@ RSpec.describe "isTriangle" do
   describe "isNotTriangle" do
     context 'Triangle Cannot Exist' do
       it "raises error if one side exceeds the sum of the other two sides" do
-        expect { ArgumentError.new(isNotTriangle(1,1,10)) }.to raise_error("Triangle Cannot Exist")
+        expect { isNotTriangle(1,1,10) }.to raise_error("Triangle Cannot Exist")
       end
       it "raises error if one side exceeds the sum of the other two sides" do
-        expect { ArgumentError.new(isNotTriangle(1,10,1)) }.to raise_error("Triangle Cannot Exist")
+        expect { isNotTriangle(1,10,1) }.to raise_error("Triangle Cannot Exist")
       end
       it "raises error if one side exceeds the sum of the other two sides" do
-        expect { ArgumentError.new(isNotTriangle(10,1,1)) }.to raise_error("Triangle Cannot Exist")
+        expect { isNotTriangle(10,1,1) }.to raise_error("Triangle Cannot Exist")
       end
     end
   end
