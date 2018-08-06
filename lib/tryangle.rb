@@ -1,12 +1,12 @@
 
 def isTriangle(a,b,c)
   if isEquilateral(a,b,c)
-      "Equilateral"
-    elsif isIsosceles(a,b,c)
-      "Isosceles"
-    elsif isScalene(a,b,c)
-      "Scalene"
-    else isNotTriangle(a,b,c)
+    "Equilateral"
+  elsif isIsosceles(a,b,c)
+    "Isosceles"
+  elsif isScalene(a,b,c)
+    "Scalene"
+  else isNotTriangle(a,b,c)
   end
 end
 
