@@ -1,28 +1,28 @@
 # frozen_string_literal: true
-
-def isTriangle(a, b, c)
-  raise ArgumentError, 'Invalid Triangle' if invalidTriangle(a, b, c)
-  return 'Equilateral' if isEquilateral(a, b, c)
-  return 'Isosceles' if isIsosceles(a, b, c)
-  return 'Scalene' if isScalene(a, b, c)
+def isTriangle(side1, side2, side3)
+  raise ArgumentError, 'Invalid Triangle' if invalidTriangle(side1, side2, side3)
+  return 'Equilateral' if isEquilateral(side1, side2, side3)
+  return 'Isosceles' if isIsosceles(side1, side2, side3)
+  return 'Scalene' if isScalene(side1, side2, side3)
 end
 
-def invalidTriangle(a, b, c)
-  ((a + b) < c) ||
-    ((b + c) < a) ||
-    ((a + c) < b)
+def invalidTriangle(side1, side2, side3)
+  ((side1 + side2) < side3) ||
+      ((side2 + side3) < side1) ||
+      ((side1 + side3) < side2)
 end
 
-def isEquilateral(a, b, c)
-  a == b && a == c
+def isEquilateral(side1, side2, side3)
+  side1 == side2 && side1 == side3
 end
 
-def isIsosceles(a, b, c)
-  a == b && a != c || b == c || a == c
+def isIsosceles(side1, side2, side3)
+  side1 == side2 && side1 != side3 ||
+      side2 == side3 || side1 == side3
 end
 
-def isScalene(a, b, c)
-  (a != b && a != c) &&
-    (b != a && b != c) &&
-    (c != a && c != b)
+def isScalene(side1, side2, side3)
+  (side1 != side2 && side1 != side3) &&
+      (side2 != side1 && side2 != side3) &&
+      (side3 != side1 && side3 != side2)
 end
