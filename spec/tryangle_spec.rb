@@ -2,16 +2,23 @@
 
 require_relative '../lib/tryangle'
 
-RSpec.describe('isNotTriangle') do
-  context 'Triangle Cannot Exist' do
-    it 'raises error if one side exceeds the sum of the other two sides' do
-      expect { isNotTriangle(1, 1, 10) }.to raise_error('Triangle Cannot Exist')
+RSpec.describe('invalidTriangle') do
+  context 'Invalid Triangle' do
+    it 'returns true if one side exceeds the sum of the other two sides' do
+      expect(invalidTriangle(1, 1, 1000)).to eq(true)
+    end
+    it 'returns false if one side exceeds the sum of the other two sides' do
+      expect(invalidTriangle(5, 4, 3)).to eq(false)
     end
   end
 end
 
 RSpec.describe('isTriangle') do
   context 'Equilateral' do
+    it 'should return Equilateral when all three sides are equal' do
+      expect(isTriangle(1, 1, 1)).to eq('Equilateral')
+    end
+
     it 'should return Equilateral when all three sides are equal' do
       expect(isTriangle(1, 1, 1)).to eq('Equilateral')
     end
@@ -23,7 +30,7 @@ RSpec.describe('isTriangle') do
     end
 
     context 'Scalene' do
-      it 'should return Scalene when no sides are equal to eachother' do
+      it 'should return Scalene when no sides are equal to each other' do
         expect(isTriangle(1, 2, 3)).to eq('Scalene')
       end
     end
