@@ -5,14 +5,10 @@ def isNotTriangle(a, b, c)
 end
 
 def isTriangle(a, b, c)
-  if isEquilateral(a, b, c)
-    'Equilateral'
-  elsif isIsosceles(a, b, c)
-    'Isosceles'
-  elsif isScalene(a, b, c)
-    'Scalene'
-  else isNotTriangle(a, b, c)
-  end
+  isNotTriangle(a, b, c)
+  return 'Equilateral' if isEquilateral(a, b, c)
+  return 'Isosceles' if isIsosceles(a, b, c)
+  return 'Scalene' if isScalene(a, b, c)
 end
 
 def isEquilateral(a, b, c)
