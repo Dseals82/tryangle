@@ -1,28 +1,28 @@
-def isNotTriangle(a,b,c)
-  if (a + b) < c or (b + c) < a or (a + c) < b
-    raise ArgumentError.new("Triangle Cannot Exist")
+def isNotTriangle(a, b, c)
+  raise ArgumentError, 'Triangle Cannot Exist' if ((a + b) < c) ||
+                                                  ((b + c) < a) ||
+                                                  ((a + c) < b)
+end
+
+def isTriangle(a, b, c)
+  if isEquilateral(a, b, c)
+    'Equilateral'
+  elsif isIsosceles(a, b, c)
+    'Isosceles'
+  elsif isScalene(a, b, c)
+    'Scalene'
+  else isNotTriangle(a, b, c)
   end
 end
 
-def isTriangle(a,b,c)
-  if isEquilateral(a,b,c)
-    "Equilateral"
-  elsif isIsosceles(a,b,c)
-    "Isosceles"
-  elsif isScalene(a,b,c)
-    "Scalene"
-  else isNotTriangle(a,b,c)
-  end
+def isEquilateral(a, b, c)
+  a == b && a == c
 end
 
-def isEquilateral(a,b,c)
-  a == b && a==c
+def isIsosceles(a, b, c)
+  a == b && a != c || b == c || a == c
 end
 
-def isIsosceles(a,b,c)
-  a == b && a != c or b == c or a == c
-end
-
-def isScalene(a,b,c)
-  (a != b && a != c) and (b != a && b != c) and (c != a && c != b)
+def isScalene(a, b, c)
+  (a != b && a != c) && (b != a && b != c) && (c != a && c != b)
 end
